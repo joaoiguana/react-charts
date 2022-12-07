@@ -59,6 +59,34 @@ const weekly = [
   { data: [55, 41, 74, 30, 58], },
 ];
 
+const buttons = ["Daily", "Weekly"];
+
+const ToggleButtons = ({
+  setSeries,
+  setActiveButton,
+  activeButton
+}) => {
+  const handleClick = stat => {
+    setSeries(stat === "Daily" ? daily : weekly);
+    setActiveButton(stat);
+  };
+
+  return (
+    <nav>
+      {buttons.map(button => (
+        <button
+          key={button}
+          className={button === activeButton
+            ? "active"
+            : ""
+          }
+          onClick={() => handleClick(button)}
+        >{button}</button>
+      ))}
+    </nav>
+  );
+};
+
 const Chart = () => {
   return (
     <div>
