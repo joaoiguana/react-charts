@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ApexCharts from 'apexcharts';
+import ApexChart from 'react-apexcharts';
 import './Chart.css';
 
 const colorPrimary = "#13ae94",
@@ -88,11 +88,30 @@ const ToggleButtons = ({
 };
 
 const Chart = () => {
-  return (
-    <div>
+  const [series, setSeries] = useState(daily);
+  const [activeButton, setActiveButton] = useState("Daily");
 
+  return (
+    <div className='card'>
+      <header>
+        <h2>Revenue</h2>
+        <ToggleButtons
+          setSeries={setSeries}
+          setActiveButton={setActiveButton}
+          activeButton={activeButton}
+        />
+      </header>
+      <div className='chart'>
+        <ApexChart
+          options={options}
+          series={series}
+          type="area"
+          width="100%"
+          height="100%"
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Chart;

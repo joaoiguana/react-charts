@@ -1,13 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import './App.css';
+import Chart from './components/Chart'
 
 const App = () => {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-
+    <div>
+      <h1>Here's an example of a React Chart using ApexCharts</h1>
+      <div className='apex'>
+        <Chart />
+      </div>
     </div>
   )
 }
