@@ -48,8 +48,16 @@ var options = {
     axisTicks: { show: false, },
     crosshairs: { show: false, },
     categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-  }
+  },
 };
+
+const daily = [
+  { data: [35, 55, 41, 74, 30, 58], },
+];
+
+const weekly = [
+  { data: [55, 41, 74, 30, 58], },
+];
 
 const Chart = () => {
   return (
